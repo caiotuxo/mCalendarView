@@ -63,9 +63,9 @@ public class CalendarExpAdapter extends ArrayAdapter {
             }
         }
         ((BaseCellView) ret).setDate(dayData.getDate());
-        if (OnDateClickListener.instance != null) {
+        // if (OnDateClickListener.instance != null) {
             ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
-        }
+        // }
         if (dayData.getDate().equals(CurrentCalendar.getCurrentDateData()) &&
                 ret instanceof DefaultCellView) {
             ((DefaultCellView) ret).setDateToday();
