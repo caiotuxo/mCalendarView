@@ -40,6 +40,22 @@ public class DefaultMarkView extends BaseMarkView {
     public DefaultMarkView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+    
+    public boolean setDateChoose() {
+        setBackgroundDrawable(MarkStyleExp.choose);
+        textView.setTextColor(Color.WHITE);
+        return true ;
+    }
+
+    public void setDateToday(){
+        setBackgroundDrawable(MarkStyleExp.today);
+        textView.setTextColor(Color.rgb(105, 75, 125));
+    }
+
+    public void setDateNormal() {
+        textView.setTextColor(Color.BLACK);
+        setBackgroundDrawable(null);
+    }
 
     private void initLayoutWithStyle(MarkStyle style){
         textView = new TextView(getContext());
