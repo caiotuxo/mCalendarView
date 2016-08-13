@@ -11,9 +11,8 @@ import sun.bob.mcalendarview.vo.DateData;
 /**
  * Created by bob.sun on 15/8/28.
  */
-public abstract class BaseMarkView extends BaseCellView{
-    private OnDateClickListener clickListener;
-    private DateData date;
+public abstract class BaseMarkView extends BaseCellView
+{
 
     public BaseMarkView(Context context) {
         super(context);
