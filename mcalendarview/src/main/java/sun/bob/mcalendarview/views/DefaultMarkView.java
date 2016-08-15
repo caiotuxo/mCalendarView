@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import sun.bob.mcalendarview.CellConfig;
 import sun.bob.mcalendarview.MarkStyle;
+import sun.bob.mcalendarview.MarkStyleExp;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.DayData;
 
@@ -39,22 +40,6 @@ public class DefaultMarkView extends BaseMarkView {
 
     public DefaultMarkView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-    
-    public boolean setDateChoose() {
-        setBackgroundDrawable(MarkStyleExp.choose);
-        textView.setTextColor(Color.WHITE);
-        return true ;
-    }
-
-    public void setDateToday(){
-        setBackgroundDrawable(MarkStyleExp.today);
-        textView.setTextColor(Color.rgb(105, 75, 125));
-    }
-
-    public void setDateNormal() {
-        textView.setTextColor(Color.BLACK);
-        setBackgroundDrawable(null);
     }
 
     private void initLayoutWithStyle(MarkStyle style){
@@ -158,7 +143,29 @@ public class DefaultMarkView extends BaseMarkView {
             this.setLayoutParams(params);
         }
     }
+    public boolean setDateChoose() {
+        this.setBackgroundDrawable(MarkStyleExp.choose);
+        this.textView.setTextColor(-1);
+        return true;
+    }
 
+    public void setDateToday() {
+        this.setBackgroundDrawable(MarkStyleExp.today);
+        this.textView.setTextColor(Color.rgb(105, 75, 125));
+    }
+
+    public void setDateNormal() {
+        this.textView.setTextColor(-16777216);
+        this.setBackgroundDrawable((Drawable)null);
+    }
+
+    public void setTextColor(String text, int color) {
+        this.textView.setText(text);
+        if(color != 0) {
+            this.textView.setTextColor(color);
+        }
+
+    }
     class Dot extends RelativeLayout{
 
         public Dot(Context context, int color) {
